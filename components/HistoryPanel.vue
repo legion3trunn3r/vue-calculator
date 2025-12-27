@@ -77,35 +77,79 @@
 
 <style scoped>
   .history-panel {
-    @apply fixed left-0 top-0 w-64 h-full bg-white dark:bg-gray-800 rounded-r-2xl shadow-2xl z-50 flex flex-col overflow-hidden;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 16rem;
+    height: 100%;
+    background: white;
+    border-radius: 0 0.5rem 0.5rem 0;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .dark .history-panel {
+    background: #1f2937;
   }
 
   .history-header {
-    @apply flex justify-between items-center p-4 border-b border-gray-200 dark:border-gray-700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .dark .history-header {
+    border-bottom-color: #374151;
   }
 
   .history-list {
-    @apply flex-1 overflow-y-auto;
+    flex: 1;
+    overflow-y: auto;
   }
 
   .history-item {
-    @apply p-4 border-b border-gray-100 dark:border-gray-700 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-150;
+    padding: 1rem;
+    border-bottom: 1px solid #f3f4f6;
+    cursor: pointer;
+    transition: background-color 150ms ease-in-out;
+  }
+
+  .history-item:hover {
+    background: #f3f4f6;
+  }
+
+  .dark .history-item {
+    border-bottom-color: #374151;
+  }
+
+  .dark .history-item:hover {
+    background: #374151;
   }
 
   .history-footer {
-    @apply border-t border-gray-200 dark:border-gray-700 p-4;
+    border-top: 1px solid #e5e7eb;
+    padding: 1rem;
+  }
+
+  .dark .history-footer {
+    border-top-color: #374151;
   }
 
   .slide-enter-active,
   .slide-leave-active {
-    @apply transition-transform duration-300;
+    transition: transform 300ms ease-in-out;
   }
 
   .slide-enter-from {
-    @apply -translate-x-full;
+    transform: translateX(-100%);
   }
 
   .slide-leave-to {
-    @apply -translate-x-full;
+    transform: translateX(-100%);
   }
 </style>

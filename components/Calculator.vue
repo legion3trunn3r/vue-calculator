@@ -257,7 +257,7 @@
   }
 
   .calculator {
-    @apply bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-3xl p-4 shadow-2xl;
+    @apply bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-3xl p-4 shadow-2xl min-w-0;
   }
 
   .display {

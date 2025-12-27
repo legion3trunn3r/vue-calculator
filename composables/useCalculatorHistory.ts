@@ -1,4 +1,4 @@
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 
 export interface HistoryEntry {
   expression: string
@@ -27,14 +27,12 @@ export const useCalculatorHistory = () => {
     history.value = []
   }
 
-  const getHistory = computed(() => history.value)
-
   const removeHistoryEntry = (index: number) => {
     history.value.splice(index, 1)
   }
 
   return {
-    history: getHistory,
+    history,
     addToHistory,
     clearHistory,
     removeHistoryEntry,
